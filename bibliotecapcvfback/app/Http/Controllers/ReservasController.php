@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 // para dar mas tiempo al lactor, de entregar el ejemplar
 
 
-class PrestamoConrtoller extends Controller
+class ReservasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,9 @@ class PrestamoConrtoller extends Controller
     public function store(Request $request)
     {
         $nwereserva = new Reservas([
-            'fecha_prestamo'=> $request->get('fecha_prestamo')
+            'fecha_reserva'=> $request->get('fecha_reserva'),
+            'usuario_id'=>$request->get('usuario_id'),
+            'ejemplar_id'=>$request->get('ejemplar_id')
         ]);
         $nwereserva->save();
         return response()->json($nwereserva,200);
@@ -50,6 +52,8 @@ class PrestamoConrtoller extends Controller
     {
         $upres = Reservas::find($id);
         $upres->fecha_prestamo=$request->get('fecha_prestamo');
+        $upres->usuario_id=$request->get('usuario_id');
+        $upres->ejemplar_id=$request->get('ejemplar_id');
         $upres->save();
         return response()->json($upres,200);
     }

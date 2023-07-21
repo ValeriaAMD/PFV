@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Libro;
 
-class LibroConrtoller extends Controller
+class LibroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,10 @@ class LibroConrtoller extends Controller
     {
         $newlibro = new Libro([
             'titulo'=> $request->get('titulo'),
-            'isbn'=> $request->get('isbn')
+            'isbn'=> $request->get('isbn'),
+            'autor_id'=>$request->get('autor_id'),
+            'editorial_id'=>$request->get('editorial_id'),
+            'categoria_id'=>$request->get('categoria_id')
         ]);
         $newlibro->save();
         return response()->json($newlibro,200);
@@ -46,6 +49,9 @@ class LibroConrtoller extends Controller
         $uplibro = Libro::find($id);
         $uplibro->titulo=$request->get('titulo');
         $uplibro->isbn=$request->get('isbn');
+        $uplibro->autor_id=$request->get('autor_id');
+        $uplibro->editorial_id=$request->get('editorial_id');
+        $uplibro->categoria_id=$request->get('categoria_id');
         $uplibro->save();
         return response()->json($uplibro,200);
     }

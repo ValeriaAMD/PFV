@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('fecha_prestamo')->nullable(); 
+            $table->dateTime('fecha_reserva')->nullable(); 
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('usuario_id');

@@ -6,12 +6,10 @@ use App\Models\Ejemplar;
 use Illuminate\Http\Request;
 
 
-// en esta tabla solo se pueden consultar los ejemplares, ya que 
-// depende de la tabla libro, si se modifica, actualiza o elimina un libro
-// o bien un ejemplar
 
 
-class EjemplarConrtoller extends Controller
+
+class EjemplarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +25,12 @@ class EjemplarConrtoller extends Controller
      */
     public function store(Request $request)
     {
-        
+        $newejem = new Ejemplar([
+            'libro_id'=> $request->get('libro_id'),
+            'estado_id'=> $request->get('estado_id')
+        ]);
+        $newejem->save();
+        return response()->json($newejem,200);
     }
 
     /**
@@ -44,7 +47,11 @@ class EjemplarConrtoller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $upedit = Ejemplar::find($id);
+        $upedit->libro_id=$request->get('libro_id');
+        $upedit->estado_id=$request->get('estado_id');
+        $upedit->save();
+        return response()->json($upedit,200);
     }
 
     /**
@@ -52,6 +59,8 @@ class EjemplarConrtoller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $destroyejem = Ejemplar::find($id);
+        $destroyejem->delete();
+        return response()->json($destroyejem,200);
     }
 }

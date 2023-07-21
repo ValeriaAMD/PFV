@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\AutorConrtoller;
-use App\Http\Controllers\CategoriaConrtoller;
-use App\Http\Controllers\EditorialConrtoller;
-use App\Http\Controllers\EjemplarConrtoller;
-use App\Http\Controllers\LibroConrtoller;
-use App\Http\Controllers\MultaConrtoller;
-use App\Http\Controllers\PrestamoConrtoller;
-use App\Http\Controllers\UsuarioConrtoller;
+use App\Http\Controllers\AutorController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\EditorialController;
+use App\Http\Controllers\EjemplarController;
+use App\Http\Controllers\LibroController;
+use App\Http\Controllers\MultaController;
+use App\Http\Controllers\PrestamoController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\EstadoEjemplarController;
 use Illuminate\Http\Request;
@@ -28,48 +28,53 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 //rutas de la entidad Libro
-Route::get('/libro',[LibroConrtoller::class,'index']);
-Route::post('/libro',[LibroConrtoller::class,'store']);
-Route::get('/libro/{id}',[LibroConrtoller::class,'show']);
-Route::put('/libro/{id}',[LibroConrtoller::class,'update']);
-Route::delete('/libro/{id}',[LibroConrtoller::class,'destroy']);
+Route::get('/libro',[LibroController::class,'index']);
+Route::post('/libro',[LibroController::class,'store']);
+Route::put('/libro/{id}',[LibroController::class,'update']);
+Route::get('/libro/{id}',[LibroController::class,'show']);
+Route::delete('/libro/{id}',[LibroController::class,'destroy']);
 //rutas de la entidad Autor
-Route::get('/authors',[AutorConrtoller::class,'index']);
-Route::post('/authors',[AutorConrtoller::class,'store']);
-Route::get('/authors/{id}',[AutorConrtoller::class,'show']);
-Route::put('/authors/{id}',[AutorConrtoller::class,'update']);
-Route::delete('/authors/{id}',[AutorConrtoller::class,'destroy']);
+Route::get('/authors',[AutorController::class,'index']);
+Route::post('/authors',[AutorController::class,'store']);
+Route::get('/authors/{id}',[AutorController::class,'show']);
+Route::put('/authors/{id}',[AutorController::class,'update']);
+Route::delete('/authors/{id}',[AutorController::class,'destroy']);
 //rutas de la entidad Editorial
-Route::get('/editoriales',[EditorialConrtoller::class,'index']);
-Route::post('/editoriales',[EditorialConrtoller::class,'store']);
-Route::get('/editoriales/{id}',[EditorialConrtoller::class,'show']);
-Route::put('/editoriales/{id}',[EditorialConrtoller::class,'update']);
-Route::delete('/editoriales/{id}',[EditorialConrtoller::class,'destroy']);
+Route::get('/editoriales',[EditorialController::class,'index']);
+Route::post('/editoriales',[EditorialController::class,'store']);
+Route::get('/editoriales/{id}',[EditorialController::class,'show']);
+Route::put('/editoriales/{id}',[EditorialController::class,'update']);
+Route::delete('/editoriales/{id}',[EditorialController::class,'destroy']);
 //rutas de la entidad Categoria
-Route::get('/categors',[CategoriaConrtoller::class,'index']);
-Route::post('/categors',[CategoriaConrtoller::class,'store']);
-Route::get('/categors/{id}',[CategoriaConrtoller::class,'show']);
-Route::put('/categors/{id}',[CategoriaConrtoller::class,'update']);
-Route::delete('/categors/{id}',[CategoriaConrtoller::class,'destroy']);
+Route::get('/categors',[CategoriaController::class,'index']);
+Route::post('/categors',[CategoriaController::class,'store']);
+Route::get('/categors/{id}',[CategoriaController::class,'show']);
+Route::put('/categors/{id}',[CategoriaController::class,'update']);
+Route::delete('/categors/{id}',[CategoriaController::class,'destroy']);
 //rutas de la entidad Ejemplar
-Route::get('/ejemplarsitos',[EjemplarConrtoller::class,'index']);
-Route::get('/ejemplarsitos',[EjemplarConrtoller::class,'show']);
+Route::get('/ejemplarsitos',[EjemplarController::class,'index']);
+Route::post('/ejemplarsitos',[EjemplarController::class,'store']);
+Route::get('/ejemplarsitos/{id}',[EjemplarController::class,'show']);
+Route::put('/ejemplarsitos/{id}',[EjemplarController::class,'update']);
+Route::delete('/ejemplarsitos/{id}',[EjemplarController::class,'destroy']);
 //rutas de la entidad Usuario 
-Route::get('/users',[UsuarioConrtoller::class,'index']);
-Route::post('/users',[UsuarioConrtoller::class,'store']);
-Route::get('/users/{id}',[UsuarioConrtoller::class,'show']);
-Route::put('/users/{id}',[UsuarioConrtoller::class,'update']);
-Route::delete('/users/{id}',[UsuarioConrtoller::class,'destroy']);
+Route::get('/users',[UsuarioController::class,'index']);
+Route::post('/users',[UsuarioController::class,'store']);
+Route::get('/users/{id}',[UsuarioController::class,'show']);
+Route::put('/users/{id}',[UsuarioController::class,'update']);
+Route::delete('/users/{id}',[UsuarioController::class,'destroy']);
 //rutas de la entidad Prestamo
-Route::get('/prestamee',[PrestamoConrtoller::class,'index']);
-Route::post('/prestamee',[PrestamoConrtoller::class,'store']);
-Route::get('/prestamee/{id}',[PrestamoConrtoller::class,'show']);
-Route::put('/prestamee/{id}',[PrestamoConrtoller::class,'update']);
-Route::delete('/prestamee/{id}',[PrestamoConrtoller::class,'destroy']);
+Route::get('/prestamee',[PrestamoController::class,'index']);
+Route::post('/prestamee',[PrestamoController::class,'store']);
+Route::get('/prestamee/{id}',[PrestamoController::class,'show']);
+Route::put('/prestamee/{id}',[PrestamoController::class,'update']);
+Route::delete('/prestamee/{id}',[PrestamoController::class,'destroy']);
 //rutas de la entidad Multa
-Route::get('/caileconlaferia',[MultaConrtoller::class,'index']);
-Route::post('/caileconlaferia',[MultaConrtoller::class,'store']);
-Route::get('/caileconlaferia/{id}',[MultaConrtoller::class,'show']);
+Route::get('/caileconlaferia',[MultaController::class,'index']);
+Route::post('/caileconlaferia',[MultaController::class,'store']);
+Route::get('/caileconlaferia/{id}',[MultaController::class,'show']);
+Route::put('/caileconlaferia/{id}',[MultaController::class,'update']);
+Route::delete('/caileconlaferia/{id}',[MultaController::class,'destroy']);
 //rutas de la entidad estado del ejemplar
 Route::get('/estado',[EstadoEjemplarController::class,'index']);
 Route::post('/estado',[EstadoEjemplarController::class,'store']);

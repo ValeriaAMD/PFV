@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 // modificar o eliminar las multas
 
 
-class MultaConrtoller extends Controller
+class MultaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,8 @@ class MultaConrtoller extends Controller
     {
         $newM = new Multa([
             'monto'=>$request->get('monto'),
-            'fecha_pago'=> $request->get('fecha_pago')
+            'fecha_pago'=> $request->get('fecha_pago'),
+            'prestamo_id'=>$request->get('prestamo_id')
         ]);
         $newM->save();
         return response()->json($newM,200);
@@ -48,7 +49,12 @@ class MultaConrtoller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $upmulta = Multa::find($id);
+        $upmulta->monto=$request->get('monto');
+        $upmulta->fecha_pago=$request->get('fecha_pago');
+        $upmulta->prestamo_id=$request->get('prestamo_id');
+        $upmulta->save();
+        return response()->json($upmulta,200);
     }
 
     /**
@@ -56,7 +62,9 @@ class MultaConrtoller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $destmulta = Multa::find($id);
+        $destmulta->delete();
+        return response()->json($destmulta,200);
     }
 }
 

@@ -9,6 +9,6 @@ class Reservas extends Model
 {
     use HasFactory;
     protected $table = 'Reservas';
-    protected $fillable = ['fecha_prestamo'];
+    protected $fillable = ['fecha_reserva','usuario_id','ejemplar_id'];
     protected $hidden = ['created_at', 'updated_at'];
 }

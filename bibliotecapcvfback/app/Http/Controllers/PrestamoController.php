@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 // para dar mas tiempo al lactor, de entregar el ejemplar
 
 
-class PrestamoConrtoller extends Controller
+class PrestamoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,9 @@ class PrestamoConrtoller extends Controller
     public function store(Request $request)
     {
         $newprestamo = new Prestamo([
-            'fecha_prestamo'=> $request->get('fecha_prestamo')
+            'fecha_prestamo'=> $request->get('fecha_prestamo'),
+            'usuario_id'=> $request->get('usuario_id'),
+            'ejemplar_id'=> $request->get('ejemplar_id')
         ]);
         $newprestamo->save();
         return response()->json($newprestamo,200);
@@ -50,6 +52,8 @@ class PrestamoConrtoller extends Controller
     {
         $upprr = Prestamo::find($id);
         $upprr->fecha_prestamo=$request->get('fecha_prestamo');
+        $upprr->usuario_id=$request->get('usuario_id');
+        $upprr->ejemplar_id=$request->get('ejemplar_id');
         $upprr->save();
         return response()->json($upprr,200);
     }

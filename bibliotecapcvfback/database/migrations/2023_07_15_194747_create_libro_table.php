@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->unsignedBigInteger('autor_id');
-            $table->foreign('autor_id')->references('id')->on('Autor');
+            $table->foreign('autor_id')->references('id')->on('autor');
             $table->unsignedBigInteger('editorial_id');
             $table->foreign('editorial_id')->references('id')->on('editorial');
             $table->unsignedBigInteger('categoria_id');
