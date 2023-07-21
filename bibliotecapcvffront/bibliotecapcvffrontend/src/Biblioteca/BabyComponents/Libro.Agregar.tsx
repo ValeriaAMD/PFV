@@ -32,8 +32,8 @@ export const AgregarLibro = () => {
             setrefL(!refL)
           }
         }
-      ) .catch(error => {console.error(error)
-        setErrorMessage('Los datos que intenta agregar no existen');
+      ) .catch(error => {console.error(error);
+        alert('Los datos  que intenta agregar en autor, categoria o editorial puede que no existen, intente con uno que ya hs sido agregado');
       });  
   };
 

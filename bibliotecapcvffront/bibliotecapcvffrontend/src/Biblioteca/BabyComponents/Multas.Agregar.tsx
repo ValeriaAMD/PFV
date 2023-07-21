@@ -27,7 +27,9 @@ export const AgregarMultas = () => {
           setrefM(!refM)
         }
       }
-    )
+    ).catch(error => {console.error(error);
+      alert('Los datos  que intenta agregar en prestamo puede que no existen, intente con uno que ya hs sido agregado');
+    }); 
   }
 
 

@@ -26,7 +26,9 @@ export const AgregarEjemplares = () => {
           setrefEjm(!refEjm)
         }
       }
-    )
+    ).catch(error => {console.error(error);
+      alert('Los datos  que intenta agregar en libro y estado puede que no existen, intente con uno que ya hs sido agregado');
+    }); 
   }
 
 

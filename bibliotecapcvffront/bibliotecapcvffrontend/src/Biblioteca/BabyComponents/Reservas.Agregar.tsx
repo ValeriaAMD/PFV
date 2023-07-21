@@ -27,7 +27,9 @@ export const AgregarReservas = () => {
           setrefR(!refR)
         }
       }
-    )
+    ).catch(error => {console.error(error);
+      alert('Los datos  que intenta agregar en usuario o ejemplar puede que no existen, intente con uno que ya hs sido agregado');
+    }); 
   }
 
 
