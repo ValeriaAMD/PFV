@@ -13,9 +13,9 @@ export const AgregarEditorial = () => {
   const {refEd,setrefEd} = useContext(EditorialContexto)
   const [DataEditorial,setDataEditorial] = useState<IEditorial>({
     id:0,
-    nombre: 'null', 
-    direccion: 'null',
-    telefono: 'null'
+    nombre: '', 
+    direccion: '',
+    telefono: ''
   })
   
   const paquete = () =>{
@@ -33,7 +33,7 @@ export const AgregarEditorial = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+      <FloatingLabel controlId="agregaredit" label="Nombre" className="mb-3">
         <Form.Control value={DataEditorial.nombre} 
         onChange={
           (event)=>{
@@ -45,7 +45,7 @@ export const AgregarEditorial = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Direccion" className="mb-3">
+      <FloatingLabel controlId="direccion" label="Direccion" className="mb-3">
         <Form.Control value={DataEditorial.direccion} 
         onChange={
           (event)=>{
@@ -57,7 +57,7 @@ export const AgregarEditorial = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Telefono" className="mb-3">
+      <FloatingLabel controlId="telefono" label="Telefono" className="mb-3">
         <Form.Control value={DataEditorial.telefono} 
         onChange={
           (event)=>{
@@ -68,7 +68,7 @@ export const AgregarEditorial = () => {
         }
         />
       </FloatingLabel>
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaEdit')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaEdit')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

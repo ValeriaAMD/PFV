@@ -13,9 +13,9 @@ export const AgregarAutor = () => {
   const {refA,setrefA} = useContext(AutorContexcto)
   const [dataAutor,setDataAutor] = useState<IAutor>({
     id:0,
-    nombre: 'null', 
-    apellido: 'null',
-    origen: 'null'
+    nombre: '', 
+    apellido: '',
+    origen: ''
 
   })
   
@@ -34,7 +34,7 @@ export const AgregarAutor = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+      <FloatingLabel controlId="nombreautor" label="Nombre" className="mb-3">
         <Form.Control value={dataAutor.nombre} 
         onChange={
           (event)=>{
@@ -46,7 +46,7 @@ export const AgregarAutor = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Apellidos" className="mb-3">
+      <FloatingLabel controlId="apellidoautor" label="Apellidos" className="mb-3">
         <Form.Control value={dataAutor.apellido} 
         onChange={
           (event)=>{
@@ -58,7 +58,7 @@ export const AgregarAutor = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Origien" className="mb-3">
+      <FloatingLabel controlId="origen" label="Origien" className="mb-3">
         <Form.Control value={dataAutor.origen} 
         onChange={
           (event)=>{
@@ -69,7 +69,7 @@ export const AgregarAutor = () => {
         }
         />
       </FloatingLabel>
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaAutro')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaAutro')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

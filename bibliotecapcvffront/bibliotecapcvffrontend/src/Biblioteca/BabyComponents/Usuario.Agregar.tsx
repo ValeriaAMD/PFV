@@ -13,10 +13,10 @@ export const AgregarUsuario = () => {
   const {refU,setrefU} = useContext(UsuariosContexto)
   const [DataUsuarios,setDataUsuarios] = useState<IUsuario>({
     id:0,
-    nombre: 'null', 
-    apellido: 'null',
-    direccion: 'null',
-    telefono: 'null'
+    nombre: '', 
+    apellido: '',
+    direccion: '',
+    telefono: ''
 
   })
   
@@ -35,7 +35,7 @@ export const AgregarUsuario = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+      <FloatingLabel controlId="nombre" label="Nombre" className="mb-3">
         <Form.Control value={DataUsuarios.nombre} 
         onChange={
           (event)=>{
@@ -47,7 +47,7 @@ export const AgregarUsuario = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Apellidos" className="mb-3">
+      <FloatingLabel controlId="apellidos" label="Apellidos" className="mb-3">
         <Form.Control value={DataUsuarios.apellido} 
         onChange={
           (event)=>{
@@ -59,7 +59,7 @@ export const AgregarUsuario = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Direccion" className="mb-3">
+      <FloatingLabel controlId="direccion" label="Direccion" className="mb-3">
         <Form.Control value={DataUsuarios.direccion} 
         onChange={
           (event)=>{
@@ -71,7 +71,7 @@ export const AgregarUsuario = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Telefono" className="mb-3">
+      <FloatingLabel controlId="telefono" label="Telefono" className="mb-3">
         <Form.Control value={DataUsuarios.telefono} 
         onChange={
           (event)=>{
@@ -82,7 +82,7 @@ export const AgregarUsuario = () => {
         }
         />
       </FloatingLabel>
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaU')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaU')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

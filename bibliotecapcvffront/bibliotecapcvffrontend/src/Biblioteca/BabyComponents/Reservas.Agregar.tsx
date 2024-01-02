@@ -13,7 +13,7 @@ export const AgregarReservas = () => {
   const {refR,setrefR} = useContext(ReservasContexto)
   const [DataReservas,setDataReservas] = useState<IReservas>({
     id:0,
-    fecha_reserva: 'null',
+    fecha_reserva: '',
     usuario_id:0,
     ejemplar_id:0
 
@@ -36,7 +36,7 @@ export const AgregarReservas = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Fecha de reserva" className="mb-3">
+      <FloatingLabel controlId="fechaR" label="Fecha de reserva" className="mb-3">
         <Form.Control value={DataReservas.fecha_reserva} 
         onChange={
           (event)=>{
@@ -48,7 +48,7 @@ export const AgregarReservas = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingStock" label="Usuario" className="mb-3">
+      <FloatingLabel controlId="user" label="Usuario" className="mb-3">
         <Form.Control value={DataReservas.usuario_id} type='number'
         onChange={
           (event)=>{
@@ -60,7 +60,7 @@ export const AgregarReservas = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingStock" label="Ejemplar" className="mb-3">
+      <FloatingLabel controlId="ejemplar" label="Ejemplar" className="mb-3">
         <Form.Control value={DataReservas.ejemplar_id} type='number'
         onChange={
           (event)=>{
@@ -72,7 +72,7 @@ export const AgregarReservas = () => {
         />
       </FloatingLabel>
 
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaR')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaR')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

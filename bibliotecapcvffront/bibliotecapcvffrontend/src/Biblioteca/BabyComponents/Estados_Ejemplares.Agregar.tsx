@@ -13,8 +13,8 @@ export const AgregarEstados = () => {
   const {refEjmES,setrefEjmES} = useContext(EstadoEjemplaresContexto)
   const [DataEsEjemplares,setDataEsEjemplares] = useState<IEstadosEjemplares>({
     id:0,
-    nombre: 'null', 
-    descripcion: 'null'
+    nombre: '', 
+    descripcion: ''
   })
   
   const paquete = () =>{
@@ -32,7 +32,7 @@ export const AgregarEstados = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+      <FloatingLabel controlId="nombre" label="Nombre" className="mb-3">
         <Form.Control value={DataEsEjemplares.nombre} 
         onChange={
           (event)=>{
@@ -44,7 +44,7 @@ export const AgregarEstados = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Descripcion" className="mb-3">
+      <FloatingLabel controlId="descrip" label="Descripcion" className="mb-3">
         <Form.Control value={DataEsEjemplares.descripcion} 
         onChange={
           (event)=>{

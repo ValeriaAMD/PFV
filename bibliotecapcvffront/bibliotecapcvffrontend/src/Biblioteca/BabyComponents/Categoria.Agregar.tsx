@@ -13,8 +13,8 @@ export const AgregarCategoria = () => {
   const {refC,setrefC} = useContext(CategoriaContexto)
   const [dataCategoria,setdataCategoria] = useState<ICategoria>({
     id:0,
-    nombre: 'null', 
-    descripcion: 'null'
+    nombre: '', 
+    descripcion: ''
 
   })
   
@@ -33,7 +33,7 @@ export const AgregarCategoria = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+      <FloatingLabel controlId="categorianombre" label="Nombre" className="mb-3">
         <Form.Control value={dataCategoria.nombre} 
         onChange={
           (event)=>{
@@ -45,7 +45,7 @@ export const AgregarCategoria = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Descripcion" className="mb-3">
+      <FloatingLabel controlId="descripcion" label="Descripcion" className="mb-3">
         <Form.Control value={dataCategoria.descripcion} 
         onChange={
           (event)=>{
@@ -57,7 +57,7 @@ export const AgregarCategoria = () => {
         />
       </FloatingLabel>
 
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaCate')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaCate')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

@@ -13,7 +13,7 @@ export const AgregarPrestamos = () => {
   const {refP,setrefP} = useContext(PrestamosContexto)
   const [dataPrestamos,setDataPrestamos] = useState<IPrestamos>({
     id:0,
-    fecha_prestamo: 'null',
+    fecha_prestamo: '',
     usuario_id:0,
     ejemplar_id:0
   })
@@ -35,7 +35,7 @@ export const AgregarPrestamos = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Fecha de prestamo" className="mb-3">
+      <FloatingLabel controlId="fechaP" label="Fecha de prestamo" className="mb-3">
         <Form.Control value={dataPrestamos.fecha_prestamo} 
         onChange={
           (event)=>{
@@ -46,7 +46,7 @@ export const AgregarPrestamos = () => {
         }
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingStock" label="Usuario" className="mb-3">
+      <FloatingLabel controlId="User" label="Usuario" className="mb-3">
    <Form.Control value={dataPrestamos.usuario_id} type='number'
    onChange={
      (event)=>{
@@ -58,7 +58,7 @@ export const AgregarPrestamos = () => {
    />
  </FloatingLabel>
 
- <FloatingLabel controlId="floatingStock" label="Ejemplar" className="mb-3">
+ <FloatingLabel controlId="ejemplar" label="Ejemplar" className="mb-3">
    <Form.Control value={dataPrestamos.ejemplar_id} type='number'
    onChange={
      (event)=>{
@@ -70,7 +70,7 @@ export const AgregarPrestamos = () => {
    />
  </FloatingLabel>
 
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaP')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaP')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

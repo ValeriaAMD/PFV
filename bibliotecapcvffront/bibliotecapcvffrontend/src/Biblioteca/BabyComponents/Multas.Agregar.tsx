@@ -13,8 +13,8 @@ export const AgregarMultas = () => {
   const {refM,setrefM} = useContext(MultasContexto)
   const [DataMultas,setDataMultas] = useState<IMultas>({
     id:0,
-    monto: 'null', 
-    fecha_pago: 'null',
+    monto: '', 
+    fecha_pago: '',
     prestamo_id: 0
 
   })
@@ -36,7 +36,7 @@ export const AgregarMultas = () => {
   return (
     <>
 <Container>
-      <FloatingLabel controlId="floatingName" label="Monto" className="mb-3">
+      <FloatingLabel controlId="monto" label="Monto" className="mb-3">
         <Form.Control value={DataMultas.monto} 
         onChange={
           (event)=>{
@@ -48,7 +48,7 @@ export const AgregarMultas = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingMarca" label="Fecha de pago " className="mb-3">
+      <FloatingLabel controlId="fechaP" label="Fecha de pago " className="mb-3">
         <Form.Control value={DataMultas.fecha_pago} 
         onChange={
           (event)=>{
@@ -60,7 +60,7 @@ export const AgregarMultas = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingFechadealta" label="Prestamo" className="mb-3">
+      <FloatingLabel controlId="prest" label="Prestamo" className="mb-3">
         <Form.Control value={DataMultas.prestamo_id} type='number'
         onChange={
           (event)=>{
@@ -72,7 +72,7 @@ export const AgregarMultas = () => {
         />
       </FloatingLabel>
       
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaM')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaM')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

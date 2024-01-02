@@ -35,7 +35,7 @@ export const AgregarEjemplares = () => {
   return (
     <>
 <Container>
-<FloatingLabel controlId="floatingStock" label="Libro" className="mb-3">
+<FloatingLabel controlId="libro" label="Libro" className="mb-3">
    <Form.Control value={dataEjemplares.libro_id} type='number'
    onChange={
      (event)=>{
@@ -47,7 +47,7 @@ export const AgregarEjemplares = () => {
    />
  </FloatingLabel>
 
- <FloatingLabel controlId="floatingStock" label="Estado" className="mb-3">
+ <FloatingLabel controlId="estado" label="Estado" className="mb-3">
    <Form.Control value={dataEjemplares.estado_id} type='number'
    onChange={
      (event)=>{
@@ -59,7 +59,7 @@ export const AgregarEjemplares = () => {
    />
  </FloatingLabel>
 
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaEjem')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaEjem')}} className="enviar">Enviar</Button>{' '}
       </Container>
     </>
   )

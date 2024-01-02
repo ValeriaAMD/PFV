@@ -15,7 +15,7 @@ export const AgregarLibro = () => {
   const [DataLibros,setDataLibros] = useState<ILibro>({
     
     id:0,
-    titulo: 'null', 
+    titulo: '', 
     isbn: 0,
     autor_id:0,
     editorial_id:0,
@@ -41,7 +41,7 @@ export const AgregarLibro = () => {
     <>
 
 <Container>
-      <FloatingLabel controlId="floatingName" label="Titulo" className="mb-3">
+      <FloatingLabel controlId="nombrelibro" label="Titulo" className="mb-3">
         <Form.Control value={DataLibros.titulo} 
         onChange={
           (event)=>{
@@ -53,7 +53,7 @@ export const AgregarLibro = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingFechadealta" label=" ISBN " className="mb-3">
+      <FloatingLabel controlId="isbn" label=" ISBN " className="mb-3">
         <Form.Control value={DataLibros.isbn} type='number'
         onChange={
           (event)=>{
@@ -65,7 +65,7 @@ export const AgregarLibro = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingFechadealta" label="Autor" className="mb-3">
+      <FloatingLabel controlId="autorid" label="Autor" className="mb-3">
         <Form.Control value={DataLibros.autor_id} type='number'
         onChange={
           (event)=>{
@@ -77,7 +77,7 @@ export const AgregarLibro = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingFechadealta" label="Editorial" className="mb-3">
+      <FloatingLabel controlId="editorial" label="Editorial" className="mb-3">
         <Form.Control value={DataLibros.editorial_id} type='number'
         onChange={
           (event)=>{
@@ -89,7 +89,7 @@ export const AgregarLibro = () => {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingFechadealta" label="Categoria" className="mb-3">
+      <FloatingLabel controlId="categoria" label="Categoria" className="mb-3">
         <Form.Control value={DataLibros.categoria_id} type='number'
         onChange={
           (event)=>{
@@ -101,7 +101,7 @@ export const AgregarLibro = () => {
         />
       </FloatingLabel>
 
-      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaL')}} className="mb-3">Enviar</Button>{' '}
+      <Button variant="outline-success"onClick={()=>{paquete(); urlx('../listaL')}} className="enviar">Enviar</Button>{' '}
       </Container>
       
     </>
