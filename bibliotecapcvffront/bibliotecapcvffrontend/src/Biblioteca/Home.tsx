@@ -32,7 +32,7 @@ return (
 <Container>
     <ReactPlayer
 url={require('./video/Lectura.mp4')}
-width={'50%'}
+width={'50%'} 
 height={'50%'}
 playing
 controls
